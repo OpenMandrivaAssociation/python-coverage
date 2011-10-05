@@ -1,6 +1,6 @@
 %define module	coverage
 %define name	python-%{module}
-%define version 3.5
+%define version 3.5.1
 %define release %mkrel 1
 
 Summary:	Code coverage measurement for Python
