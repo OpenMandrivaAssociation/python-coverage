@@ -11,7 +11,7 @@ Url:		http://nedbatchelder.com/code/coverage/
 BuildRequires:	python-setuptools
 BuildRequires:  python-devel
 BuildRequires:  python3-devel
-BuildRequires:  python3egg(setuptools)
+BuildRequires:  python3-distribute
 
 %description
 Coverage measures code coverage, typically during test execution. It
