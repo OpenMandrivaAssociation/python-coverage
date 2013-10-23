@@ -1,2 +1,4 @@
+removed_sources:
+  coverage-3.5.3.tar.gz: e2d637b49d76a218b45a1a8d1c78702ff5d8d744
 sources:
-  "coverage-3.5.3.tar.gz": e2d637b49d76a218b45a1a8d1c78702ff5d8d744
+  coverage-3.7.tar.gz: 9178465bb71acabb635dcc47e0937667cc3604d5

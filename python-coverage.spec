@@ -2,14 +2,16 @@
 
 Summary:	Code coverage measurement for Python
 Name:		python-%{module}
-Version:	3.5.3
-Release:	1
-Source0:	%{module}-%{version}.tar.gz
+Version:	3.7
+Release:	2
+Source0:	http://pypi.python.org/packages/source/c/coverage/coverage-%{version}.tar.gz
 License:	BSD
 Group:		Development/Python
 Url:		http://nedbatchelder.com/code/coverage/
 BuildRequires:	python-setuptools
-%py_requires -d
+BuildRequires:  python-devel
+BuildRequires:  python3-devel
+BuildRequires:  python3egg(setuptools)
 
 %description
 Coverage measures code coverage, typically during test execution. It
@@ -17,38 +19,52 @@ uses the code analysis tools and tracing hooks provided in the Python
 standard library to determine which lines are executable, and which
 have been executed.
 
+%package -n python3-coverage
+Summary:        Code coverage measurement for Python
+Group:          Development/Python
+Requires:       python3
+ 
+%description -n python3-coverage
+Coverage measures code coverage, typically during test execution. It
+uses the code analysis tools and tracing hooks provided in the Python
+standard library to determine which lines are executable, and which
+have been executed.
+
 %prep
-%setup -q -n %{module}-%{version}
+%setup -q -c
+
+mv %{module}-%{version} python2
+cp -r python2 python3
 
 %build
-%__python setup.py build
+pushd python2
+%{__python} setup.py build
+popd
+
+pushd python3
+%{__python3} setup.py build
+popd
 
 %install
-chmod 644 *.txt coverage/htmlfiles/* coverage.egg-info/*
-PYTHONDONTWRITEBYTECODE= %__python setup.py install --root=%{buildroot} --record=FILE_LIST
-sed -i 's/.*egg-info$//' FILE_LIST
+pushd python2
+%{__python} setup.py install --root=%{buildroot}
+popd
 
-%files -f FILE_LIST
-%defattr(-,root,root)
-%doc *.txt
+pushd python3
+%{__python3} setup.py install --root=%{buildroot}
+popd
 
+%files -n python-coverage 
+%doc python2/*.txt
+%{python_sitearch}/coverage
+%{python_sitearch}/coverage-%{version}-py%{py_ver}.egg-info
+/usr/bin/coverage
+/usr/bin/coverage2
+/usr/bin/coverage-%{py_ver}
 
-
-
-%changelog
-* Wed Oct 05 2011 Lev Givon <lev@mandriva.org> 3.5.1-1mdv2012.0
-+ Revision: 703186
-- Update to 3.5.1.
-
-* Fri Jul 01 2011 Lev Givon <lev@mandriva.org> 3.5-1
-+ Revision: 688522
-- Update to 3.5.
-
-* Wed Nov 03 2010 Michael Scherer <misc@mandriva.org> 3.4-2mdv2011.0
-+ Revision: 592699
-- rebuild for python 2.7
-
-* Wed Oct 20 2010 Lev Givon <lev@mandriva.org> 3.4-1mdv2011.0
-+ Revision: 586853
-- import python-coverage
-
+%files -n python3-coverage
+%doc python3/*.txt
+%{python3_sitearch}/coverage
+%{python3_sitearch}/coverage-%{version}-py%{py3_ver}.egg-info
+/usr/bin/coverage3
+/usr/bin/coverage-%{py3_ver}
