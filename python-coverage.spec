@@ -8,8 +8,8 @@ Source0:	http://pypi.python.org/packages/source/c/coverage/coverage-%{version}.t
 License:	BSD
 Group:		Development/Python
 Url:		http://nedbatchelder.com/code/coverage/
-BuildRequires:	python-setuptools
-BuildRequires:  python-devel
+BuildRequires:	python2-setuptools
+BuildRequires:  python2-devel
 BuildRequires:  python3-devel
 BuildRequires:  python3-distribute
 %rename		python3-coverage
