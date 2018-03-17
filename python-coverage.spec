@@ -2,8 +2,8 @@
 
 Summary:	Code coverage measurement for Python
 Name:		python-%{module}
-Version:	3.7
-Release:	4
+Version:	4.5.1
+Release:	1
 Source0:	http://pypi.python.org/packages/source/c/coverage/coverage-%{version}.tar.gz
 License:	BSD
 Group:		Development/Python
