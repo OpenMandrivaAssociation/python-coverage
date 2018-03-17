@@ -9,6 +9,7 @@ License:	BSD
 Group:		Development/Python
 Url:		http://nedbatchelder.com/code/coverage/
 BuildRequires:	python2-setuptools
+BuildRequires:	python3-setuptools
 BuildRequires:  python2-devel
 BuildRequires:  python3-devel
 BuildRequires:  python3-distribute
