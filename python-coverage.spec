@@ -2,9 +2,9 @@
 
 Summary:	Code coverage measurement for Python
 Name:		python-%{module}
-Version:	4.5.1
+Version:	4.5.2
 Release:	1
-Source0:	http://pypi.python.org/packages/source/c/coverage/coverage-%{version}.tar.gz
+Source0:	https://pypi.io/packages/source/c/coverage/coverage-%{version}.tar.gz
 License:	BSD
 Group:		Development/Python
 Url:		http://nedbatchelder.com/code/coverage/
@@ -40,33 +40,33 @@ cp -r python2 python3
 
 %build
 pushd python2
-%{__python2} setup.py build
+python setup.py build
 popd
 
 pushd python3
-%{__python3} setup.py build
+python3 setup.py build
 popd
 
 %install
 pushd python2
-%{__python2} setup.py install --root=%{buildroot}
+python setup.py install --root=%{buildroot}
 popd
 
 pushd python3
-%{__python3} setup.py install --root=%{buildroot}
+python3 setup.py install --root=%{buildroot}
 popd
 
 %files -n python-coverage 
 %doc python3/*.txt
-%{python_sitearch}/coverage
-%{python_sitearch}/coverage-%{version}-py%{py3_ver}.egg-info
+%{py_platsitedir}/coverage
+%{py_platsitedir}/coverage-%{version}-py%{py3_ver}.egg-info
 /usr/bin/coverage
 /usr/bin/coverage3
 /usr/bin/coverage-%{py3_ver}
 
 %files -n python2-coverage
 %doc python2/*.txt
-%{python2_sitearch}/coverage
-%{python2_sitearch}/coverage-%{version}-py%{py2_ver}.egg-info
+%{py_platsitedir}/coverage
+%{py_platsitedir}/coverage-%{version}-py%{py2_ver}.egg-info
 /usr/bin/coverage2
 /usr/bin/coverage-%{py2_ver}

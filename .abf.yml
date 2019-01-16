@@ -1,5 +1,6 @@
 removed_sources:
   coverage-3.5.3.tar.gz: e2d637b49d76a218b45a1a8d1c78702ff5d8d744
   coverage-3.7.tar.gz: 9178465bb71acabb635dcc47e0937667cc3604d5
-sources:
   coverage-4.5.1.tar.gz: ec7c2ee6eae78708bee08af8b85e03dd8d673ef2
+sources:
+  coverage-4.5.2.tar.gz: 206b6851568c2d232e8847990e28f8aea7ac787d
