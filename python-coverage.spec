@@ -9,11 +9,11 @@ License:	BSD
 Group:		Development/Python
 Url:		http://nedbatchelder.com/code/coverage/
 BuildRequires:	python2-setuptools
-BuildRequires:	python3-setuptools
+BuildRequires:	python-setuptools
 BuildRequires:  python2-devel
 BuildRequires:  python3-devel
-BuildRequires:  python3-distribute
-%rename		python3-coverage
+BuildRequires:  python-distribute
+#%%rename		python-coverage
 
 %description
 Coverage measures code coverage, typically during test execution. It
@@ -36,15 +36,15 @@ have been executed.
 %setup -q -c
 
 mv %{module}-%{version} python2
-cp -r python2 python3
+cp -r python2 python
 
 %build
 pushd python2
 %{__python2} setup.py build
 popd
 
-pushd python3
-%{__python3} setup.py build
+pushd python
+%{__python} setup.py build
 popd
 
 %install
@@ -52,12 +52,12 @@ pushd python2
 %{__python2} setup.py install --root=%{buildroot}
 popd
 
-pushd python3
-%{__python3} setup.py install --root=%{buildroot}
+pushd python
+%{__python} setup.py install --root=%{buildroot}
 popd
 
 %files -n python-coverage 
-%doc python3/*.txt
+%doc python/*.txt
 %{python_sitearch}/coverage
 %{python_sitearch}/coverage-%{version}-py%{py3_ver}.egg-info
 /usr/bin/coverage
