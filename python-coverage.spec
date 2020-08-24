@@ -2,9 +2,9 @@
 
 Summary:	Code coverage measurement for Python
 Name:		python-%{module}
-Version:	5.2
+Version:	5.2.1
 Release:	1
-Source0:	https://files.pythonhosted.org/packages/23/ca/c722303813a4ab9bbaee2c2639aebbfd47cc542081c56608a31a9fa3cf7d/coverage-5.2.tar.gz
+Source0:	https://files.pythonhosted.org/packages/20/c0/0df91b7bde75063316f0aa5fa699f76b2bbb4514f190a2f68580b18d2f31/coverage-5.2.1.tar.gz
 License:	BSD
 Group:		Development/Python
 Url:		http://nedbatchelder.com/code/coverage/
