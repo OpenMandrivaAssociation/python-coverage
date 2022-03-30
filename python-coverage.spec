@@ -58,8 +58,8 @@ popd
 
 %files -n python-coverage 
 %doc python/*.txt
-#{python_sitelib}/coverage
-#{python_sitelib}/coverage-%{version}-py%{py3_ver}.egg-info
+%{python_sitelib}/coverage
+%{python_sitelib}/coverage-%{version}-py%{py3_ver}.egg-info
 /usr/bin/coverage
 /usr/bin/coverage3
 /usr/bin/coverage-%{py3_ver}
