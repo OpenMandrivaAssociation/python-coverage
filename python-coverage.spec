@@ -7,7 +7,7 @@ Release:	3
 Source0:	https://files.pythonhosted.org/packages/29/83/9429871de6c7ec9ff113e12246af75aad4f0a7f31c66d0a499a0b7443a71/coverage-5.4.tar.gz
 License:	BSD
 Group:		Development/Python
-Url:		http://nedbatchelder.com/code/coverage/
+Url:		https://nedbatchelder.com/code/coverage/
 BuildRequires:	python2-setuptools
 BuildRequires:	python-setuptools
 BuildRequires:  python2-devel
