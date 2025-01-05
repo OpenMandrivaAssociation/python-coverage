@@ -7,6 +7,7 @@ URL:		https://pypi.org/project/coverage/
 License:	Apache-2.0
 Group:		Development/Python
 BuildRequires:	python
+BuildRequires:	python-devel
 BuildSystem:	python
 Obsoletes:	python2-coverage
 
