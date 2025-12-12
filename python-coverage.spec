@@ -1,6 +1,6 @@
 Name:		python-coverage
 Version:	7.8.2
-Release:	1
+Release:	2
 Source0:	https://files.pythonhosted.org/packages/source/c/coverage/coverage-%{version}.tar.gz
 Summary:	Code coverage measurement for Python
 URL:		https://pypi.org/project/coverage/
