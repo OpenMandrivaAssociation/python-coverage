@@ -9,6 +9,7 @@ Group:		Development/Python
 BuildRequires:	python
 BuildRequires:	python-devel
 BuildSystem:	python
+BuildRequires:	python%{pyver}dist(setuptools)
 Obsoletes:	python2-coverage
 
 %description
