@@ -1,7 +1,7 @@
 %define module coverage
 
 Name:		python-coverage
-Version:	7.13.4
+Version:	7.13.5
 Release:	1
 Source0:	https://files.pythonhosted.org/packages/source/c/%{module}/%{module}-%{version}.tar.gz#/%{name}-%{version}.tar.gz
 Summary:	Code coverage measurement for Python
@@ -17,6 +17,9 @@ Obsoletes:	python2-coverage
 
 %description
 Code coverage measurement for Python
+
+%build -p
+export LDFLAGS="%{ldflags} -lpython%{pyver}"
 
 %files
 %{_bindir}/%{module}*
