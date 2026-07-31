@@ -1,7 +1,7 @@
 %define module coverage
 
 Name:		python-coverage
-Version:	7.14.1
+Version:	7.15.2
 Release:	1
 Summary:	Code coverage measurement for Python
 License:	Apache-2.0
